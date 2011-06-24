@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flexLibProperties includeAllClasses="true" version="3">
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
   <includeClasses>
     <classEntry path="nz.co.codeengine.forrstconnector.Connector"/>
     <classEntry path="nz.co.codeengine.forrstconnector.ConnectorEvent"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.IConnector"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.UsersAuth"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.WorkerFactory"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.IWorker"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.IUsersAuth"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.IPostsAll"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.PostsAll"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.AbstractWorker"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.IResponse"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.IPost"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.IUser"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.IPhotos"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.IPayLoad"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.Response"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.Post"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.User"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.Photos"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.Payload"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

@@ -4,33 +4,33 @@ package nz.co.codeengine.forrstconnector
 	import com.adobe.serialization.json.JSONDecoder;
 	
 	import flash.events.EventDispatcher;
+	import flash.events.IEventDispatcher;
 	
 	import mx.rpc.events.FaultEvent;
 	import mx.rpc.events.ResultEvent;
 	import mx.rpc.http.HTTPService;
 	
+	import nz.co.codeengine.forrstconnector.vo.IWorker;
+	
 
-	public class Connector extends EventDispatcher
+	public class Connector extends EventDispatcher implements IConnector, IEventDispatcher
 	{
 		private var username:String = "kit.venter@me.com";
 		private var password:String = "";
 		private var token:String = "";
 		private var endpoint:String = "http://forrst.com/api/v2/";
 		private var response:String = "";
+		private var securityToken:String = "";
 		public static var COMMUNICATION_PROTOCOL_JSON:String = "text";
 		
-		private var worker:String = "";
+		private var worker:IWorker;
 		private var workerFunction:String;
-		public function Connector(worker:String)
-		{
-			this.worker = worker;
-			this.workerFunction = worker.replace("/","_");			
-		}
 		
-		public function execute():void{
-			//Magic
+		public function execute(worker:IWorker):void{
 			try{
-				this[workerFunction]();
+				this.worker = worker;
+				var service:HTTPService = this.create_service(worker);
+				this.executeService(service, worker.paramify());
 			}catch(e:ReferenceError){
 				var event:ConnectorEvent = new ConnectorEvent(ConnectorEvent.CONNECTOR_FAULT);
 				event.response = "Connector::Connector says: no such worker - " + worker;
@@ -38,18 +38,19 @@ package nz.co.codeengine.forrstconnector
 			}
 		}
 		
-		private function create_service(worker:String):HTTPService{
+		private function create_service(worker:IWorker):HTTPService{
 			
 			var service:HTTPService = new HTTPService();
 			service.method="POST";
-			service.url = endpoint + worker;
+			service.url = endpoint + worker.workerId;
 			service.resultFormat=Connector.COMMUNICATION_PROTOCOL_JSON;
 			service.addEventListener(ResultEvent.RESULT, function(event:ResultEvent):void{
 					response = String(event.result);
-					var ce:ConnectorEvent = new ConnectorEvent(worker);
+					var ce:ConnectorEvent = new ConnectorEvent(worker.workerId);
 					ce.response = response;
 					ce.object = mapJSON2Object(response);
 					ce.endpoint = event.currentTarget.url;
+					ce.worker = worker;
 					dispatchEvent(ce);
 			}); 
 			service.addEventListener(FaultEvent.FAULT, function(event:FaultEvent):void{
@@ -62,29 +63,6 @@ package nz.co.codeengine.forrstconnector
 			return service;
 		}
 		
-		public function users_info():void{
-			var service:HTTPService = create_service(this.worker);
-			var params:Object = new Object();
-			params.username = "sabeau";
-			params.id = "1";
-			this.executeService(service, params);
-		}
-		
-		public function users_auth():void{
-			var service:HTTPService = create_service(this.worker);
-			var params:Object = new Object();
-			params.username="";
-			params.password="";
-			this.executeService(service, params);
-		}
-		
-		public function posts_all():void{
-			var service:HTTPService = create_service(this.worker);
-			service.method = "GET";
-			
-			this.executeService(service, null);
-			
-		}
 		
 		private function mapJSON2Object(json:String):Object{
 			return JSON.decode(json);			
