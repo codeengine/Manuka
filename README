@@ -1,1 +1,5 @@
-MANUKA is a library written to allow applications easy access to Forrsts exposed services
+Manuka is a forrst library written to allow applications easy access to forrsts exposed services.
+
+The driver behind manuka is to create a forrst library that is simple to use and returns fully typed, interfaced objects in a smart, consistent and uniform way.
+
+Manuka seeks to employ good coding practices, object oriented design and software design patterns to ensure that the application remains simple to maintain and easy to extend, securing its future as the apis exposed by forrst continue to change.
