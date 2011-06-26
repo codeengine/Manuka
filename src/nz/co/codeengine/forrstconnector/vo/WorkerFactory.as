@@ -16,11 +16,32 @@ package nz.co.codeengine.forrstconnector.vo
 		public function createWorker(workerId:String):IWorker{
 			var worker:IWorker;
 			switch (workerId){
+				case "stats":
+					worker = new Stats();
+					break;
 				case "posts/all":
 					worker = new PostsAll();
-					worker.workerId = workerId;
+					break;
+				case "posts/list":
+					worker = new PostsList();
+					break;
+				case "posts/show":
+					worker = new PostsShow();
+					break;
+				case "post/comments":
+					worker = new PostComments();
+					break;
+				case "users/auth":
+					worker = new UsersAuth();
+					break;
+				case "user/info":
+					worker = new UsersInfo();
+					break;
+				case "user/posts":
+					worker = new UserPost();
 					break;
 			}
+			worker.workerId = workerId;
 			return worker;
 		}
 		

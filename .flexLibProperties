@@ -21,6 +21,12 @@
     <classEntry path="nz.co.codeengine.forrstconnector.vo.User"/>
     <classEntry path="nz.co.codeengine.forrstconnector.vo.Photos"/>
     <classEntry path="nz.co.codeengine.forrstconnector.vo.Payload"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.Stats"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.PostsList"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.PostsShow"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.PostComments"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.UsersInfo"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.UserPosts"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
