@@ -2,6 +2,8 @@
 
 Manuka is a forrst library written to allow applications easy access to forrsts exposed services.
 
+Manuka is currently a work in progress, and while most of the library is up and running, expect at least a couple of glitches while it's solidified.
+
 The driver behind manuka is to create a forrst library that is simple to use and returns fully typed, interfaced objects in a smart, consistent and uniform way.
 
 Example usage:
@@ -34,6 +36,8 @@ An example of working with a post:
 	}
 
 ## Authentication
+
+Although authentication is not currently enabled by the forrst api, below is further information of how this would theoretically be done using manuka.
 
 Some requests require parameters to be set, and in this case you simply set the properties on the worker before you send the worker off for execution:
 
