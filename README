@@ -1,3 +1,4 @@
+## Manuka Forrst
 Manuka is a forrst library written to allow applications easy access to forrsts exposed services.
 
 The driver behind manuka is to create a forrst library that is simple to use and returns fully typed, interfaced objects in a smart, consistent and uniform way.
@@ -6,6 +7,7 @@ Manuka seeks to employ good coding practices, object oriented design and softwar
 
 
 Example usage:
+
 var worker:IWorker = WorkerFactory.instance.createWorker(Constants.API_GET_STATS);
 var connector:Connector = new Connector();
 connector.addEventListener(ConnectorEvent.ON_STATS, function(event:ConnectorEvent):void{
@@ -16,3 +18,12 @@ connector.addEventListener(ConnectorEvent.ON_CONNECTOR_FAULT, function(event:Con
     trace(event.response);
 });
 connector.execute(worker);
+
+
+Can be called as so:
+
+    [[ForrstAPI engine] stats:^(NSUInteger rateLimit, NSInteger callsMade) {
+        NSLog(@"%d/%d; calls out of total limit", callsMade, rateLimit);
+    } fail:^(NSError *error) {
+        NSLog(@"Failed with an error: %@", error);
+    }];
