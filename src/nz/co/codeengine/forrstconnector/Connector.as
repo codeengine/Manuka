@@ -32,7 +32,7 @@ package nz.co.codeengine.forrstconnector
 				var service:HTTPService = this.create_service(worker);
 				this.executeService(service, worker.paramify());
 			}catch(e:ReferenceError){
-				var event:ConnectorEvent = new ConnectorEvent(ConnectorEvent.CONNECTOR_FAULT);
+				var event:ConnectorEvent = new ConnectorEvent(ConnectorEvent.ON_CONNECTOR_FAULT);
 				event.response = "Connector::Connector says: no such worker - " + worker;
 				dispatchEvent(event);
 			}
@@ -55,7 +55,7 @@ package nz.co.codeengine.forrstconnector
 			}); 
 			service.addEventListener(FaultEvent.FAULT, function(event:FaultEvent):void{
 				response = String(event.message.body);
-				var ce:ConnectorEvent = new ConnectorEvent(ConnectorEvent.CONNECTOR_FAULT);
+				var ce:ConnectorEvent = new ConnectorEvent(ConnectorEvent.ON_CONNECTOR_FAULT);
 				ce.response = response;
 				ce.endpoint = event.currentTarget.url;
 				dispatchEvent(ce);

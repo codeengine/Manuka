@@ -51,13 +51,13 @@ package nz.co.codeengine.forrstconnector.vo
 		
 		public function transformResponseObject(responseObject:Object):void{
 			try{
-			this.response = new Response();
-			this.response.apiEnvironment = responseObject.env;
-			this.response.executionTime = responseObject["in"];
-			this.response.isAthenticated = responseObject.authed;
-			this.response.isAuthenticatedAs = responseObject.authed_as;
-			this.response.payload = this.transformPayloadObject(responseObject.resp);			
-			this.response.status = responseObject.stat;
+				this.response = new Response();
+				this.response.apiEnvironment = responseObject.env;
+				this.response.executionTime = responseObject["in"];
+				this.response.isAthenticated = responseObject.authed;
+				this.response.isAuthenticatedAs = responseObject.authed_as;
+				this.response.payload = this.transformPayloadObject(responseObject.resp);			
+				this.response.status = responseObject.stat;
 			}catch (e:*){
 				trace(e);
 			}

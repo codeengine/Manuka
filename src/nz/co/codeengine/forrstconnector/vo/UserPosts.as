@@ -14,7 +14,13 @@ package nz.co.codeengine.forrstconnector.vo
 		
 		public function paramify():Object
 		{
-			return null;
+			var o:Object = new Object();
+			o.id = id;
+			o.username = username;
+			o.type = type;
+			o.limit = limit;
+			o.after = after;
+			return o;
 		}
 	}
 }

@@ -5,7 +5,7 @@ package nz.co.codeengine.forrstconnector.vo
 	public class WorkerFactory
 	{
 		private static var _instance:WorkerFactory = null;
-		public static var packageName:String = "nz.co.codeengine.forrstconnector.vo";
+		
 		public static function get instance():WorkerFactory{
 			if (_instance == null){
 				_instance = new WorkerFactory();
@@ -38,7 +38,7 @@ package nz.co.codeengine.forrstconnector.vo
 					worker = new UsersInfo();
 					break;
 				case "user/posts":
-					worker = new UserPost();
+					worker = new UserPosts();
 					break;
 			}
 			worker.workerId = workerId;
