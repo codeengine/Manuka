@@ -19,11 +19,3 @@ connector.addEventListener(ConnectorEvent.ON_CONNECTOR_FAULT, function(event:Con
 });
 connector.execute(worker);
 
-
-Can be called as so:
-
-    [[ForrstAPI engine] stats:^(NSUInteger rateLimit, NSInteger callsMade) {
-        NSLog(@"%d/%d; calls out of total limit", callsMade, rateLimit);
-    } fail:^(NSError *error) {
-        NSLog(@"Failed with an error: %@", error);
-    }];
