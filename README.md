@@ -8,7 +8,8 @@ The driver behind manuka is to create a forrst library that is simple to use and
 
 ## Worker Pooling
 Manuka is designed with mobile devices in mind, and so every effort is made to ensure that the library uses as little resources as possible.
-If you are using Manuka in a mobile environment, it is recommended that you use the pooling functionality of Manuka for workers.
+If you are using Manuka in a mobile environment, it is recommended that you use the pooling functionality of Manuka for workers. All that you need to do is
+make sure that you call the destroy() function on any worker that you no longer require. The WorkerFactory will automatically pool the object for reuse.
 Example usage:
 
 	worker.destroy();
