@@ -6,6 +6,13 @@ Manuka is currently a work in progress, and while most of the library is up and 
 
 The driver behind manuka is to create a forrst library that is simple to use and returns fully typed, interfaced objects in a smart, consistent and uniform way.
 
+## Worker Pooling
+Manuka is designed with mobile devices in mind, and so every effort is made to ensure that the library uses as little resources as possible.
+If you are using Manuka in a mobile environment, it is recommended that you use the pooling functionality of Manuka for workers.
+Example usage:
+
+	worker.destroy();
+
 Example usage:
 
 	var worker:IWorker = WorkerFactory.instance.createWorker(Constants.API_GET_STATS);
