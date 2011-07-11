@@ -3,10 +3,16 @@ package nz.co.codeengine.forrstconnector.vo
 	public class UsersAuth extends AbstractWorker implements IWorker, IUsersAuth
 	{
 		private var _username:String;
-		
-		
 		private var _password:String;
 		private var _securityToken:String;
+		
+		
+		public function init():void{
+			trace("UsersAuth::init says: resetting state");
+			_username = "";
+			_password = "";
+			_securityToken = "";
+		}
 		
 		public function get username():String{
 			return this._username;

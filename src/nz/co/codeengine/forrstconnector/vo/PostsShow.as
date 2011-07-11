@@ -9,6 +9,12 @@ package nz.co.codeengine.forrstconnector.vo
 			super();
 		}
 		
+		
+		public function init():void{
+			trace("PostsShow::init says: NOT IMPLEMENTED");
+		}
+		
+		
 		public function paramify():Object
 		{
 			var o:Object = new Object();

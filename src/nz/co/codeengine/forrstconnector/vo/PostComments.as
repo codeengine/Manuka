@@ -4,10 +4,17 @@ package nz.co.codeengine.forrstconnector.vo
 	{
 		public var id:String;
 		public var tinyId:String;
+		
 		public function PostComments()
 		{
 			super();
 		}
+		
+		public function init():void{
+			trace("PostComments::init says: NOT IMPLEMENTED");
+		}
+		
+		
 		
 		public function paramify():Object
 		{

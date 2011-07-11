@@ -9,7 +9,15 @@ package nz.co.codeengine.forrstconnector.vo
 	{
 		private var _workerId:String;
 		private var _response:IResponse;
+		private var _factory:WorkerFactory;
 		
+		public function get factory():WorkerFactory{
+			return _factory;
+		}
+		
+		public function set factory(value:WorkerFactory):void{
+			_factory = value;
+		}
 		
 		public function set workerId(value:String):void
 		{
@@ -66,6 +74,10 @@ package nz.co.codeengine.forrstconnector.vo
 		
 		public function transformPayloadObject(payloadObject:Object):IPayLoad{
 			return new Payload(payloadObject);
+		}
+		
+		public function destroy():void{
+			factory.destroyWorker(this as IWorker);
 		}
 	}
 }

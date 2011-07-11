@@ -4,6 +4,10 @@ package nz.co.codeengine.forrstconnector.vo
 	{
 		public var after:int;
 		
+		public function init():void{
+			trace("PostsAll::init says: NOT IMPLEMENTED");
+		}
+		
 		public function paramify():Object{
 			var params:Object = new Object();
 			params.after = this.after;

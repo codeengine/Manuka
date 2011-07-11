@@ -12,6 +12,11 @@ package nz.co.codeengine.forrstconnector.vo
 			super();
 		}
 		
+		
+		public function init():void{
+			trace("UserPosts::init says: NOT IMPLEMENTED");
+		}
+		
 		public function paramify():Object
 		{
 			var o:Object = new Object();

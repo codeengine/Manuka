@@ -1,5 +1,7 @@
 package nz.co.codeengine.forrstconnector.vo
 {
+	import mx.graphics.shaderClasses.ExclusionShader;
+
 	public class PostsList extends AbstractWorker implements IWorker
 	{
 		public var postType:String = "";
@@ -8,6 +10,10 @@ package nz.co.codeengine.forrstconnector.vo
 		public function PostsList()
 		{
 			super();
+		}
+		
+		public function init():void{
+			trace("PostsList::init says: NOT IMPLEMENTED");
 		}
 		
 		public function paramify():Object

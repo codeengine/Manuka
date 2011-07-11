@@ -7,6 +7,11 @@ package nz.co.codeengine.forrstconnector.vo
 			super();
 		}
 		
+		
+		public function init():void{
+			trace("Stats::init says: NOT IMPLEMENTED");
+		}
+		
 		public function paramify():Object
 		{
 			return new Object();

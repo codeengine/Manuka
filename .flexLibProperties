@@ -28,6 +28,7 @@
     <classEntry path="nz.co.codeengine.forrstconnector.vo.UsersInfo"/>
     <classEntry path="nz.co.codeengine.forrstconnector.vo.UserPosts"/>
     <classEntry path="nz.co.codeengine.forrstconnector.Constants"/>
+    <classEntry path="nz.co.codeengine.forrstconnector.vo.WorkerPool"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
