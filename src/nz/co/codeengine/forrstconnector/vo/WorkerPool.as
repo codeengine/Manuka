@@ -54,6 +54,9 @@ package nz.co.codeengine.forrstconnector.vo
 			if (worker != null){
 				worker.init();
 			}
+			//Remove the worker from the pool as it is no longer available
+			var index:int = pool.getItemIndex(worker);
+			pool.removeItemAt(index);
 			return worker;
 		}
 		
